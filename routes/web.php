@@ -35,12 +35,17 @@ Route::get('/editar/{id}', [ClienteController::class,'edit'])->middleware(['auth
 
 Route::post('/editar/{id}', [ClienteController::class,'update'])->middleware(['auth', 'verified'])->name('atualizarcliente');
 
-Route::get('/excluir/{id}',[ClienteController::class,'destroy'])->name('excluir');
+Route::delete('/excluir/{id}',[ClienteController::class,'destroy'])->name('excluir');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// EXCLUSÃO
+
+Route::get('/confirm_excluir/{id}', [ClienteController::class,'confirm_excl'])->middleware(['auth', 'verified'])->name('editarcliente');
+
 
 require __DIR__.'/auth.php';

@@ -4,7 +4,7 @@
     ])
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Listar Cliente') }}
         </h2>
     </x-slot>
 
@@ -25,7 +25,6 @@
   <tbody>
   @foreach ($cliente as $cliente )
     <tr>
-    {{$cliente->id}}
           <td>{{$cliente->nome}}</td>
           <td>{{$cliente->endereco}}</td>
           <td>{{$cliente->bairro}}</td>
@@ -34,7 +33,7 @@
           <td>{{$cliente->estado}}</td>
           <td>
             <a href="/editar/{{$cliente->id}}" class="btn btn-primary">Editar</a>
-            <a href="/excluir/{{$cliente->id}}" class="btn btn-danger">Excluir</a>
+            <a href="/confirm_excluir/{{$cliente->id}}" class="btn btn-danger">Excluir</a>
           </td>
     </tr>
 

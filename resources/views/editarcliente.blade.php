@@ -4,7 +4,7 @@
     ])
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Alterar') }}
         </h2>
     </x-slot>
 
@@ -54,7 +54,7 @@
 
 
             <select class="form-select" name="estado" for="estado"  aria-label="Default select example">
-                <option selected id="estado">Escolher</option>
+                <option selected id="estado" value="{{$cliente->estado}}">{{$cliente->estado}}</option>
                 <option value="PI">PI</option>
                 <option value="MG">MG</option>
                 <option value="SP">SP</option>
@@ -71,7 +71,7 @@
         <div class="flex items-center justify-end mt-4">
 
             <x-primary-button class="ml-4">
-                {{ __('Cadastrar') }}
+                {{ __('Alterar') }}
             </x-primary-button>
         </div>
     </form>

@@ -58,6 +58,11 @@ class ClienteController extends Controller
         return view('editarcliente', ['cliente' => Cliente::find($id)]);
     }
 
+    public function confirm_excl($id)
+    {
+        return view('confirm_excl', ['cliente' => Cliente::find($id)]);
+    }
+
     /**
      * Update the specified resource in storage.
      */
